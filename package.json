@@ -1,0 +1,11 @@
+{
+	"type": "module",
+	"scripts": {
+		"start": "echo '→ http://localhost:8000'; python3 -m http.server",
+		"test": "eslint --cache src && echo ✓"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"eslint-config-fnd": "^1.13.0"
+	}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Mastobox</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	--h-size: 60ch;
+	--spacing: 0.5rem;
+
+	max-width: calc(var(--h-size) + 2 * var(--spacing));
+	margin: 1rem auto;
+	padding-left: var(--spacing);
+	padding-right: var(--spacing);
+	font-family: system-ui, sans-serif;
+	line-height: 1.5;
+}
+
+label,
+label b {
+	display: block;
+}
+
+ol {
+	list-style-type: none;
+}
+
+ol > li > a {
+	margin-left: -1rem;
+}
+	</style>
+</head>
+
+<body>
+	<h1>Mastobox</h1>
+
+	<form action="#" hidden>
+		<fieldset>
+			<legend>Settings</legend>
+			<label>
+				<b>Server URL:</b>
+				<input type="text" name="server" placeholder="e.g. https://example.org">
+			</label>
+		</fieldset>
+		<button>Start</button>
+	</form>
+
+	<script type="module" src="./src/index.js"></script>
+</body>
+
+</html>
