@@ -1,4 +1,5 @@
 /* eslint-env browser */
+import { CustomElementsAutoLoader } from "./elements/auto_loader.js";
 import { auth, deauth } from "./mastodon/index.js";
 import { detoot } from "./mastodon/toot.js";
 import { CustomError } from "./util.js";
@@ -23,6 +24,8 @@ let RETOOT_HTML = ({ via, toot }) => `
 main();
 
 async function main() {
+	customElements.define("ce-autoloader", CustomElementsAutoLoader);
+
 	let client = await auth();
 	if(client === false) { // user activation required
 		let settings = document.querySelector("form"); // XXX: smell

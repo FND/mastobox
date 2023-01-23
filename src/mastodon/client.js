@@ -1,3 +1,5 @@
+import { normalizeBasePath } from "../util.js";
+
 let SCOPE = "read";
 let RESPONSE_TYPE = "code";
 let GRANT_TYPE = "authorization_code";
@@ -7,10 +9,7 @@ export class MastodonClient {
 	constructor(clientName, serverURL, clientURL, accessToken = null) {
 		this.clientName = clientName;
 		this.clientURL = clientURL;
-		if(serverURL.endsWith("/")) { // normalize, removing trailing slash
-			serverURL = serverURL.substring(0, serverURL.length - 1);
-		}
-		this.serverURL = serverURL;
+		this.serverURL = normalizeBasePath(serverURL);
 		this.accessToken = accessToken;
 	}
 
